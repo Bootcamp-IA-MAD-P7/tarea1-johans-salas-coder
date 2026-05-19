@@ -100,23 +100,8 @@ Django usa **MVT**. Los propios creadores de Django lo denominan así, aunque co
 
 ## 3. ¿Cómo se estructura un proyecto en Django?
 
-'''
-mi_proyecto/
-├── manage.py                  ← Herramienta de administración por línea de comandos
-├── mi_proyecto/
-│   ├── settings.py            ← Configuración global del proyecto
-│   ├── urls.py                ← URLs raíz del proyecto
-│   └── wsgi.py                ← Punto de entrada para el servidor
-└── mi_app/
-    ├── models.py              ← Modelos (estructura de la base de datos)
-    ├── views.py               ← Vistas (lógica de cada petición)
-    ├── urls.py                ← URLs de esta aplicación
-    ├── forms.py               ← Formularios
-    ├── admin.py               ← Registro en el panel de administración
-    └── templates/
-        └── mi_app/
-            └── lista.html     ← Templates HTML
-'''
+<img width="1007" height="522" alt="image" src="https://github.com/user-attachments/assets/249dd4d5-0f27-4716-b068-5841274aa0d1" />
+
 
 | Fichero      | Rol                                                                               |
 |--------------|-----------------------------------------------------------------------------------|
