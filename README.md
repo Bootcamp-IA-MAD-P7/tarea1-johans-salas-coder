@@ -151,11 +151,11 @@ En los templates de Django hay dos tipos de marcadores:
 ## 4. ¿Cuál es el flujo de datos entre un formulario HTML y la base de datos en Django?
 
 1. Usuario rellena el formulario en el navegador
-<img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" />
-2. Navegador envía POST a una URL (ej: /tareas/nueva/)
-<img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" />
+        <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" />
+        2. Navegador envía POST a una URL (ej: /tareas/nueva/)
+        <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" />
 3. urls.py enruta la petición a la vista correspondiente
-<img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" />
+        <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" />
 4. views.py recibe request.POST con los datos del formulario
 <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" />
 5. Se instancia un ModelForm con los datos recibidos
