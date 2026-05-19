@@ -151,22 +151,22 @@ En los templates de Django hay dos tipos de marcadores:
 ## 4. ¿Cuál es el flujo de datos entre un formulario HTML y la base de datos en Django?
 
 1. Usuario rellena el formulario en el navegador<br>
-        <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" /><br>
+                                <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" /><br>
 2. Navegador envía POST a una URL (ej: /tareas/nueva/)<br>
-        <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" /><br>
+                                <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" /><br>
 3. urls.py enruta la petición a la vista correspondiente<br>
-        <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" /><br>
-4. views.py recibe request.POST con los datos del formulario
-<img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" />
-5. Se instancia un ModelForm con los datos recibidos
-<img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" />
-6. form.is_valid() valida los datos (tipos, campos obligatorios, etc.)
-<img width="221" height="169" alt="image" src="https://github.com/user-attachments/assets/864b2819-1bd4-4a75-9a12-35fdbc58f768" />
-7. form.save()     Se devuelve el formulario
-   guarda en        con los errores
-   la BD            al template
-<img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" />
-8. redirect() a la lista o detalle
+                                <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" /><br>
+4. views.py recibe request.POST con los datos del formulario<br>
+                                <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" /><br>
+5. Se instancia un ModelForm con los datos recibidos<br>
+                                <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" /><br>
+6. form.is_valid() valida los datos (tipos, campos obligatorios, etc.)<br>
+                                <img width="221" height="169" alt="image" src="https://github.com/user-attachments/assets/864b2819-1bd4-4a75-9a12-35fdbc58f768" /><br>
+7. form.save()     Se devuelve el formulario<br>
+   guarda en        con los errores<br>
+   la BD            al template<br>
+                                <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" /><br>
+8. redirect() a la lista o detalle<br>
 
 
 **En código:**
