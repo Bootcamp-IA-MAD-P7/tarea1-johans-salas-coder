@@ -162,26 +162,15 @@ En los templates de Django hay dos tipos de marcadores:
                                                                         <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" /><br>
 6. form.is_valid() valida los datos (tipos, campos obligatorios, etc.)<br>
                                                                         <img width="221" height="169" alt="image" src="https://github.com/user-attachments/assets/864b2819-1bd4-4a75-9a12-35fdbc58f768" /><br>
-7. - Válido: form.save() guarda en la BD<br>
-    No válido: Se devuelve el formulario con los errores al template<br>
+7.  - Válido: form.save() guarda en la BD<br>
+    - No válido: Se devuelve el formulario con los errores al template<br>
                                                                         <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" /><br>
 8. redirect() a la lista o detalle<br>
 
 
 **En código:**
 
-'''
-python
-def crear_tarea(request):
-    if request.method == "POST":
-        form = TareaForm(request.POST)
-        if form.is_valid():
-            form.save()                       # INSERT en la base de datos
-            return redirect('lista_tareas')
-    else:
-        form = TareaForm()
-    return render(request, 'crear.html', {'form': form})
-'''
+<img width="902" height="353" alt="image" src="https://github.com/user-attachments/assets/c068c06f-828a-42ef-a75b-f8234237e508" />
 
 ---
 
@@ -208,26 +197,8 @@ El Admin es una interfaz web de administración **generada automáticamente** po
 
 **Activación en tres pasos:**
 
-'''python
-# 1. models.py — defines el modelo
-class Tarea(models.Model):
-    titulo     = models.CharField(max_length=200)
-    completada = models.BooleanField(default=False)
-    creada_en  = models.DateTimeField(auto_now_add=True)
+<img width="709" height="666" alt="image" src="https://github.com/user-attachments/assets/cfb95fd0-1253-4d18-8709-5526fcfbedf6" />
 
-# 2. admin.py — lo registras
-from django.contrib import admin
-from .models import Tarea
-
-@admin.register(Tarea)
-class TareaAdmin(admin.ModelAdmin):
-    list_display  = ('titulo', 'completada', 'creada_en')
-    list_filter   = ('completada',)
-    search_fields = ('titulo',)
-
-# 3. Accedes en el navegador a:
-# http://127.0.0.1:8000/admin/
-'''
 
 > El Admin es ideal para gestión interna, pero no se recomienda como interfaz de usuario final porque no está diseñado para personalización profunda.
 
@@ -252,36 +223,13 @@ Es una librería que extiende Django para construir APIs REST. Añade:
 
 **Comparación entre Django tradicional y DRF:**
 
-'''python
-# Django tradicional → devuelve HTML
-def lista_tareas(request):
-    tareas = Tarea.objects.all()
-    return render(request, 'lista.html', {'tareas': tareas})
+<img width="710" height="693" alt="image" src="https://github.com/user-attachments/assets/23bea9ea-0304-4596-947b-6425b0006a30" />
 
-# Django REST Framework → devuelve JSON
-from rest_framework import viewsets
-from .serializers import TareaSerializer
-
-class TareaViewSet(viewsets.ModelViewSet):
-    queryset         = Tarea.objects.all()
-    serializer_class = TareaSerializer
-
-# Genera automáticamente:
-# GET    /tareas/      → lista todas las tareas
-# POST   /tareas/      → crea una tarea nueva
-# GET    /tareas/1/    → detalle de la tarea 1
-# PUT    /tareas/1/    → actualiza la tarea 1
-# DELETE /tareas/1/    → elimina la tarea 1
-'''
 
 **Respuesta JSON de la API:**
 
-'''json
-[
-  {"id": 1, "titulo": "Estudiar Django", "completada": false},
-  {"id": 2, "titulo": "Hacer el proyecto", "completada": true}
-]
-'''
+<img width="761" height="174" alt="image" src="https://github.com/user-attachments/assets/88ed189e-2de4-4d1c-84c1-51b500f286e7" />
+
 
 **¿Cuándo usar cada uno?**
 
