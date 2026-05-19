@@ -54,20 +54,6 @@ Es el patrón de arquitectura más extendido en aplicaciones web y de escritorio
 <img width="472" height="385" alt="image" src="https://github.com/user-attachments/assets/0a868fb1-17cf-4eb2-9fe9-fd0ce10177ba" />
 
 
-'''
-Usuario
-  │
-  ▼
-Controlador  ──────────►  Modelo
-  │                          │
-  │                    (Base de datos)
-  ▼                          │
-Vista  ◄────────────────────
-  │
-  ▼
-Respuesta al usuario
-'''
-
 | Capa            | Responsabilidad                                                                 |
 |-----------------|---------------------------------------------------------------------------------|
 | **Modelo**      | Gestiona los datos, la lógica de negocio y la comunicación con la base de datos |
@@ -82,19 +68,7 @@ Respuesta al usuario
 
 Es la variante que usa Django. Cambia el nombre de las capas y redistribuye algunas responsabilidades:
 
-'''
-Usuario
-  │
-  ▼
-URLs (urls.py)  ──►  Vista (views.py)  ──►  Modelo (models.py)
-                           │                       │
-                           │                (Base de datos)
-                           ▼                       │
-                      Template (.html)  ◄──────────
-                           │
-                           ▼
-                    Respuesta al usuario
-'''
+<img width="759" height="385" alt="image" src="https://github.com/user-attachments/assets/20efdcdb-6b34-4c77-93f1-67eb2eeba641" />
 
 | Capa         | Responsabilidad                                                    |
 |--------------|--------------------------------------------------------------------|
@@ -193,33 +167,23 @@ En los templates de Django hay dos tipos de marcadores:
 
 '''
 1. Usuario rellena el formulario en el navegador
-         │
-         ▼
-2. Navegador envía POST a una URL (ej: /tareas/nueva/)
-         │
-         ▼
-3. urls.py enruta la petición a la vista correspondiente
-         │
-         ▼
-4. views.py recibe request.POST con los datos del formulario
-         │
-         ▼
-5. Se instancia un ModelForm con los datos recibidos
-         │
-         ▼
-6. form.is_valid() valida los datos (tipos, campos obligatorios, etc.)
-         │
-    ┌────┴────┐
-  Válido   No válido
-    │           │
-    ▼           ▼
-7. form.save()  Se devuelve el formulario
-   guarda en    con los errores
-   la BD        al template
-    │
-    ▼
-8. redirect() a la lista o detalle
-'''
+                   <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" />
+3. Navegador envía POST a una URL (ej: /tareas/nueva/)
+                    <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" />
+5. urls.py enruta la petición a la vista correspondiente
+                    <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" />
+6. views.py recibe request.POST con los datos del formulario
+                     <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" />
+7. Se instancia un ModelForm con los datos recibidos
+                     <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" />
+8. form.is_valid() valida los datos (tipos, campos obligatorios, etc.)
+                    <img width="221" height="169" alt="image" src="https://github.com/user-attachments/assets/864b2819-1bd4-4a75-9a12-35fdbc58f768" />
+9. form.save()             10. Se devuelve el formulario
+   guarda en                con los errores
+   la BD                    al template
+                    <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" />
+11. redirect() a la lista o detalle
+''' 
 
 **En código:**
 
