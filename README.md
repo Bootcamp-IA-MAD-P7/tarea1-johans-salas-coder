@@ -162,9 +162,8 @@ En los templates de Django hay dos tipos de marcadores:
                                                                         <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" /><br>
 6. form.is_valid() valida los datos (tipos, campos obligatorios, etc.)<br>
                                                                         <img width="221" height="169" alt="image" src="https://github.com/user-attachments/assets/864b2819-1bd4-4a75-9a12-35fdbc58f768" /><br>
-7. form.save()                                                          Se devuelve el formulario<br>
-   guarda en                                                            con los errores<br>
-   la BD                                                                al template<br>
+7. - Válido: form.save() guarda en la BD<br>
+    No válido: Se devuelve el formulario con los errores al template<br>
                                                                         <img width="56" height="70" alt="image" src="https://github.com/user-attachments/assets/71d1f561-ee44-4ae0-baa2-6051619f1868" /><br>
 8. redirect() a la lista o detalle<br>
 
