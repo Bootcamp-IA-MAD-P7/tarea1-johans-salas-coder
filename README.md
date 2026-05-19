@@ -51,6 +51,9 @@ Un **patrón de arquitectura** es una solución reutilizable y probada para orga
 
 Es el patrón de arquitectura más extendido en aplicaciones web y de escritorio. Divide la aplicación en tres capas:
 
+<img width="472" height="385" alt="image" src="https://github.com/user-attachments/assets/0a868fb1-17cf-4eb2-9fe9-fd0ce10177ba" />
+
+
 '''
 Usuario
   │
